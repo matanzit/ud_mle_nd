@@ -13731,7 +13731,15 @@ this allows us to automate the runs of different models (poly, rbf) with tuning 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The data set is divided into k subsets and each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. This helps prevent overfitting, a drawback of using a particular set of data. </strong></p>
+<p>**Answer: The data set is divided into k subsets and each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. This helps prevent overfitting, a drawback of using a particular set of data.</p>
+<p>Revised Answer:
+the K-fold cross validation training technique is used to get an unbiased estimate of model generalization for unseen data, letting us know if a given algorith will train properly or not. the data set is split for final testing set and training set. the training set is divided into k subsets. 1 set (fold) is used as the test fold and the rest from training folds (k-1 folds),
+the process it repeated:
+we train our model K times, each time using a different fold as our testing set, and the remaining rows as our training sets (this way we achieve the cross validation), then we average the result to get our final model.
+by using this method we are also preserving more data that can be used for training out algorithm.</p>
+<p>The benefit this technique provides for grid search is a descrease in bias, helping us determine if a set of hyperparameters is best suited for the model evalution metric for a any data set. without using the K-fold cross validation training technique we might might end up with a model who's hyperparameter selection is particularly suited for a certian data set. 
+we take one hyperparameter combination and fixed it or an entire round of k-fold.
+**</p>
 
 </div>
 </div>
